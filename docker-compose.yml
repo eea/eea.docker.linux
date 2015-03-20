@@ -1,0 +1,6 @@
+centos:
+  build: centos
+debian:
+  build: debian
+ubuntu:
+  build: ubuntu
