@@ -8,7 +8,9 @@ RUN \
   apt-get update && \
   apt-get install -y \
   build-essential \
+  cron \
   curl \
+  fontconfig \
   git \
   graphviz \
   graphviz-dev \
@@ -32,19 +34,20 @@ RUN \
   python-docutils \
   python-testtools \
   subversion \
+  tex-gyre \
   unzip \
   wget \
   wv \
   xpdf
 
 #
-## XXX Fix me
+# Microsoft fonts
 #
-#    urw-fonts
-#    liboboe
-#    liboboe-dev
-#    fontconfig
-#    cronie
+RUN sed -i 's|main|main contrib|' /etc/apt/sources.list
+RUN \
+  apt-get update && \
+  apt-get install -y \
+    ttf-mscorefonts-installer
 
 #
 # Cleanup

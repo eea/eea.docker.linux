@@ -7,7 +7,9 @@ MAINTAINER "Alin Voinea" <alin.voinea@eaudeweb.ro>
 RUN \
   yum -y update && \
   yum -y install \
+    cronie \
     curl \
+    fontconfig \
     git \
     graphviz-devel \
     htop \
@@ -31,19 +33,23 @@ RUN \
     python-testtools \
     subversion \
     unzip \
+    urw-fonts \
     wget \
     wv \
     xpdf
 
 #
-## XXX Fix me
+# Microsoft fonts
 #
-#    urw-fonts
-#    mstcore-fonts
-#    liboboe
-#    liboboe-dev
-#    fontconfig
-#    cronie
+RUN curl -o /tmp/msttcorefonts-2.5-1.noarch.rpm -k ftp://rpmfind.net/linux/sourceforge/r/re/repo-1c/RPMS/msttcorefonts-2.5-1.noarch.rpm
+RUN yum -y install /tmp/msttcorefonts-2.5-1.noarch.rpm
+RUN rm -f /tmp/msttcorefonts-2.5-1.noarch.rpm
+
+#
+# XXX Fix me. Install
+#
+# tex-gyre - TeX Gyre Pagella font
+#
 
 #
 # Cleanup
