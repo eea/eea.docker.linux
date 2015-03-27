@@ -9,14 +9,16 @@ can obviously re-use them within your non-related EEA projects.
 
 ### Supported tags and respective Dockerfile links
 
-  - eeacms/linux`:ubuntu`
-  - eeacms/linux`:centos`
-  - eeacms/linux`:debian`
+  - eeacms/ubuntu `:latest`, `:14.04`
+  - eeacms/debian `:latest`, `:jessie`
+  - eeacms/centos `:latest`, `:7`
 
 
-### Base docker image
+### Base docker images
 
- - https://registry.hub.docker.com/u/eeacms/linux/
+ - https://registry.hub.docker.com/u/eeacms/ubuntu/
+ - https://registry.hub.docker.com/u/eeacms/debian/
+ - https://registry.hub.docker.com/u/eeacms/centos/
 
 
 ### Source code
@@ -38,26 +40,25 @@ can obviously re-use them within your non-related EEA projects.
 2. Download [automated build](https://registry.hub.docker.com/u/eeacms/linux/)
    from public [Docker Hub Registry](https://registry.hub.docker.com/):
 
-    `docker pull eeacms/linux`
+    `docker pull eeacms/ubuntu`
+    `docker pull eeacms/debian`
+    `docker pull eeacms/centos`
 
-   alternatively, you can build an image:
-
-    `docker build -t="eeacms/linux" github.com/eea/eea.docker.linux`
 
 
 ### Usage
 
-1. Default image is ubuntu
+1. Ubuntu
 
-    `docker run -it --rm eeacms/linux cat /etc/issue`
+    `docker run -it --rm eeacms/ubuntu cat /etc/issue`
 
-2. To run CentOS
+2. CentOS
 
-    `docker run -it --rm eeacms/linux:centos cat /etc/*release`
+    `docker run -it --rm eeacms/centos cat /etc/*release`
 
 
 ### Extend
 
 * These images were created to be extended, thus within your Dockerfile:
 
-    `FROM eeacms/linux:debian`
+    `FROM eeacms/debian`

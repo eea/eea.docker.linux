@@ -1,6 +1,6 @@
 ## Ubuntu distribution
 
-Docker images for Ubuntu created to be used with EEA Plone Add-ons related
+Docker image for Ubuntu created to be used with EEA Plone Add-ons related
 services like: Jenkins, Plone WebSite, etc.
 
 As this image is basically Ubuntu with some extra libraries you
@@ -9,12 +9,12 @@ can obviously re-use it within your non-related EEA projects.
 
 ### Supported tags and respective Dockerfile links
 
-  - eeacms/linux`:ubuntu`
+  - eeacms/ubuntu `:latest`, `:14.04`
 
 
 ### Base docker image
 
- - https://registry.hub.docker.com/u/eeacms/linux/
+ - https://registry.hub.docker.com/u/eeacms/ubuntu/
 
 ### Source code
 
@@ -28,7 +28,7 @@ can obviously re-use it within your non-related EEA projects.
 2. Download [automated build](https://registry.hub.docker.com/u/eeacms/linux/)
    from public [Docker Hub Registry](https://registry.hub.docker.com/):
 
-   `docker pull eeacms/linux`
+   `docker pull eeacms/ubuntu`
 
    (alternatively, you can build an image:
 
@@ -37,11 +37,11 @@ can obviously re-use it within your non-related EEA projects.
 
 ### Usage
 
-    docker run -it --rm eeacms/linux:ubuntu cat /etc/issue
+    docker run -it --rm eeacms/ubuntu cat /etc/issue
 
 
 ### Extend
 
 This image was created to be extended, thus within your Dockerfile:
 
-    FROM eeacms/linux:ubuntu
+    FROM eeacms/ubuntu
