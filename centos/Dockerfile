@@ -5,7 +5,7 @@ MAINTAINER "Alin Voinea" <alin.voinea@eaudeweb.ro>
 # Install
 #
 RUN \
-  yum -y update && \
+  yum -y updateinfo && \
   yum -y install \
     cronie \
     curl \
