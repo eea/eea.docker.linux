@@ -10,6 +10,7 @@ RUN \
     cronie \
     curl \
     fontconfig \
+    gcc \
     git \
     graphviz-devel \
     htop \
@@ -30,6 +31,7 @@ RUN \
     poppler-utils \
     python-devel \
     python-docutils \
+    python-test \
     python-testtools \
     subversion \
     unzip \
