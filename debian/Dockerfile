@@ -21,6 +21,8 @@ RUN \
   libcurl4-openssl-dev \
   libjpeg-dev \
   libjpeg62 \
+  libmemcached-dev \
+  libpq-dev \
   libreadline-dev \
   libsasl2-dev \
   libssl-dev \

@@ -20,6 +20,7 @@ RUN \
     curl-devel \
     libjpeg-turbo-devel \
     libjpeg-turbo \
+    libmemcached-devel \
     readline-devel \
     cyrus-sasl-devel \
     openssl-devel \
@@ -29,6 +30,7 @@ RUN \
     which \
     pdftk \
     poppler-utils \
+    postgresql-devel \
     python-devel \
     python-docutils \
     python-test \
