@@ -7,6 +7,8 @@ MAINTAINER "Alin Voinea" <alin.voinea@eaudeweb.ro>
 RUN \
   yum -y updateinfo && \
   yum -y install \
+    make \
+    tar \
     cronie \
     curl \
     fontconfig \

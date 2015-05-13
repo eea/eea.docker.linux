@@ -9,6 +9,8 @@ RUN \
   apt-get install -y \
   build-essential \
   curl \
+  make \
+  tar \
   fontconfig \
   git \
   graphviz \

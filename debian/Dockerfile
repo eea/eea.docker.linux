@@ -10,6 +10,8 @@ RUN \
   build-essential \
   cron \
   curl \
+  make \
+  tar \
   fontconfig \
   git \
   graphviz \
