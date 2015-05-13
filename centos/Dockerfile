@@ -13,6 +13,7 @@ RUN \
     curl \
     fontconfig \
     gcc \
+    gcc-c++ \
     git \
     graphviz-devel \
     htop \
