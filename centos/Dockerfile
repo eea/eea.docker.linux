@@ -59,9 +59,39 @@ RUN rm -f /tmp/msttcorefonts-2.5-1.noarch.rpm
 #
 
 #
+# Python 2.4
+#
+RUN \
+  cd /tmp && \
+  curl -o Python-2.4.6.tgz https://www.python.org/ftp/python/2.4.6/Python-2.4.6.tgz && \
+  tar -zxvf Python-2.4.6.tgz && \
+  cd Python-2.4.6 && \
+  ./configure && \
+  make && \
+  make install
+
+#
+# Python 2.6
+#
+RUN \
+  cd /tmp && \
+  curl -o Python-2.6.9.tgz https://www.python.org/ftp/python/2.6.9/Python-2.6.9.tgz && \
+  tar -zxvf Python-2.6.9.tgz && \
+  cd Python-2.6.9 && \
+  ./configure && \
+  make && \
+  make install
+
+#
+# Fix default python
+#
+RUN mv /usr/local/bin/python /usr/local/bin/python-2.6
+
+#
 # Cleanup
 #
 RUN yum clean all
+RUN rm -rf /tmp/Python*
 
 #
 # Start
