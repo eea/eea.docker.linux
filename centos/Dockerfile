@@ -5,6 +5,7 @@ MAINTAINER "Alin Voinea" <alin.voinea@eaudeweb.ro>
 # Install
 #
 RUN \
+  curl -k -o /tmp/msttcorefonts-2.5-1.noarch.rpm ftp://rpmfind.net/linux/sourceforge/r/re/repo-1c/RPMS/msttcorefonts-2.5-1.noarch.rpm && \
   yum -y updateinfo && \
   yum -y install \
     make \
@@ -43,20 +44,18 @@ RUN \
     urw-fonts \
     wget \
     wv \
-    xpdf
-
-#
-# Microsoft fonts
-#
-RUN curl -o /tmp/msttcorefonts-2.5-1.noarch.rpm -k ftp://rpmfind.net/linux/sourceforge/r/re/repo-1c/RPMS/msttcorefonts-2.5-1.noarch.rpm
-RUN yum -y install /tmp/msttcorefonts-2.5-1.noarch.rpm
-RUN rm -f /tmp/msttcorefonts-2.5-1.noarch.rpm
+    xpdf \
+    zlib-devel \
+    /tmp/msttcorefonts-2.5-1.noarch.rpm && \
+    yum clean all && \
+    rm -f /tmp/msttcorefonts-2.5-1.noarch.rpm
 
 #
 # XXX Fix me. Install
 #
 # tex-gyre - TeX Gyre Pagella font
 #
+
 
 #
 # Python 2.4
@@ -68,7 +67,9 @@ RUN \
   cd Python-2.4.6 && \
   ./configure && \
   make && \
-  make install
+  make install && \
+  rm -rf /tmp/Python*
+
 
 #
 # Python 2.6
@@ -80,18 +81,10 @@ RUN \
   cd Python-2.6.9 && \
   ./configure && \
   make && \
-  make install
+  make install && \
+  rm -rf /tmp/Python* && \
+  mv /usr/local/bin/python /usr/local/bin/python-2.6 # Fix default python
 
-#
-# Fix default python
-#
-RUN mv /usr/local/bin/python /usr/local/bin/python-2.6
-
-#
-# Cleanup
-#
-RUN yum clean all
-RUN rm -rf /tmp/Python*
 
 #
 # Start
