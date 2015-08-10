@@ -6,6 +6,7 @@ MAINTAINER "Alin Voinea" <alin.voinea@eaudeweb.ro>
 #
 RUN \
   curl -k -o /tmp/msttcorefonts-2.5-1.noarch.rpm ftp://rpmfind.net/linux/sourceforge/r/re/repo-1c/RPMS/msttcorefonts-2.5-1.noarch.rpm && \
+  curl -k -o /tmp/wkhtmltopdf-0.12.2.4.tgz http://eggrepo.apps.eea.europa.eu/pypi/wkhtmltopdf/wkhtmltopdf-0.12.2.4.tgz && \
   yum -y updateinfo && \
   yum -y install \
     make \
@@ -24,6 +25,7 @@ RUN \
     curl-devel \
     libjpeg-turbo-devel \
     libjpeg-turbo \
+    libpng12 \
     libmemcached-devel \
     readline-devel \
     cyrus-sasl-devel \
@@ -47,8 +49,10 @@ RUN \
     xpdf \
     zlib-devel \
     /tmp/msttcorefonts-2.5-1.noarch.rpm && \
-    yum clean all && \
-    rm -f /tmp/msttcorefonts-2.5-1.noarch.rpm
+    tar -zxvf /tmp/wkhtmltopdf-0.12.2.4.tgz -C /usr/bin/ && \
+    rm -f /tmp/msttcorefonts-2.5-1.noarch.rpm && \
+    rm -f /tmp/wkhtmltopdf-0.12.2.4.tgz && \
+    yum clean all
 
 #
 # XXX Fix me. Install

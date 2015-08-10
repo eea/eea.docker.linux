@@ -6,6 +6,7 @@ MAINTAINER "Alin Voinea" <alin.voinea@eaudeweb.ro>
 #
 RUN \
   sed -i 's|main|main contrib|' /etc/apt/sources.list && \
+  curl -k -o /tmp/wkhtmltopdf-0.12.2.4.tgz http://eggrepo.apps.eea.europa.eu/pypi/wkhtmltopdf/wkhtmltopdf-0.12.2.4.tgz && \
   apt-get update && \
   apt-get -y --no-install-recommends install \
   build-essential \
@@ -24,6 +25,7 @@ RUN \
   libcurl4-openssl-dev \
   libjpeg-dev \
   libjpeg62 \
+  libpng12-0 \
   libmemcached-dev \
   libpq-dev \
   libreadline-dev \
@@ -46,6 +48,8 @@ RUN \
   xpdf \
   zlib1g-dev \
   ttf-mscorefonts-installer && \
+  tar -zxvf /tmp/wkhtmltopdf-0.12.2.4.tgz -C /usr/bin/ && \
+  rm -f /tmp/wkhtmltopdf-0.12.2.4.tgz && \
   rm -rf /var/lib/apt/lists/* && \
   ln -s /lib/x86_64-linux-gnu/libz.so.1 /lib/libz.so # Fix zlib path
 
