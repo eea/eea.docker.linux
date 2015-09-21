@@ -32,6 +32,7 @@ RUN \
   libjpeg-dev \
   libjpeg62 \
   libpng12-0 \
+  libmagickcore5-extra \
   libmemcached-dev \
   libpq-dev \
   libreadline-dev \

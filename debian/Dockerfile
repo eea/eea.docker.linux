@@ -23,6 +23,7 @@ RUN \
   fontconfig \
   ghostscript \
   git \
+  gsfonts \
   graphviz \
   graphviz-dev \
   htop \
@@ -33,6 +34,7 @@ RUN \
   libjpeg-dev \
   libjpeg62 \
   libpng12-0 \
+  libmagickcore-6.q16-2-extra \
   libmemcached-dev \
   libpq-dev \
   libreadline-dev \
