@@ -46,6 +46,7 @@ RUN \
   python-dev \
   python-docutils \
   python-testtools \
+  ssh-client \
   subversion \
   tex-gyre \
   unzip \
