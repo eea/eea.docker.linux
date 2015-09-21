@@ -16,6 +16,7 @@ RUN \
     fontconfig \
     gcc \
     gcc-c++ \
+    ghostscript \
     git \
     graphviz-devel \
     htop \

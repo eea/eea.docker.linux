@@ -15,6 +15,7 @@ RUN \
   make \
   tar \
   fontconfig \
+  ghostscript \
   git \
   graphviz \
   graphviz-dev \
