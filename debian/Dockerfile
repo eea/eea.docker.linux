@@ -5,6 +5,12 @@ MAINTAINER "Alin Voinea" <alin.voinea@eaudeweb.ro>
 # Install
 #
 RUN \
+  apt-get update && \
+  apt-get -y --no-install-recommends install \
+  curl && \
+  rm -rf /var/lib/apt/lists/*
+
+RUN \
   sed -i 's|main|main contrib|' /etc/apt/sources.list && \
   curl -k -o /tmp/wkhtmltopdf-0.12.2.4.tgz http://eggrepo.apps.eea.europa.eu/pypi/wkhtmltopdf/wkhtmltopdf-0.12.2.4.tgz && \
   apt-get update && \
