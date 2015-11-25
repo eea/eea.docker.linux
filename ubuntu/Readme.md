@@ -9,7 +9,9 @@ can obviously re-use it within your non-related EEA projects.
 
 ### Supported tags and respective Dockerfile links
 
-  - eeacms/ubuntu `:latest`, `:14.04`
+  - `:latest` [*Dockerfile*](https://github.com/eea/eea.docker.linux/blob/master/ubuntu/Dockerfile) (default)
+  - `:14s` [*Dockerfile*](https://github.com/eea/eea.docker.linux/blob/slim/ubuntu/Dockerfile)
+  - `:14.04` [*Dockerfile*](https://github.com/eea/eea.docker.linux/blob/fat/ubuntu/Dockerfile)
 
 
 ### Base docker image

@@ -8,7 +8,9 @@ can obviously re-use it within your non-related EEA projects.
 
 ### Supported tags and respective Dockerfile links
 
-  - eeacms/debian `:latest`, `:jessie`
+  - `:latest` [*Dockerfile*](https://github.com/eea/eea.docker.linux/blob/master/debian/Dockerfile) (default)
+  - `:8s` [*Dockerfile*](https://github.com/eea/eea.docker.linux/blob/slim/debian/Dockerfile)
+  - `:jessie` [*Dockerfile*](https://github.com/eea/eea.docker.linux/blob/fat/debian/Dockerfile)
 
 
 ### Base docker image

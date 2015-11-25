@@ -9,7 +9,9 @@ can obviously re-use it within your non-related EEA projects.
 
 ### Supported tags and respective Dockerfile links
 
-  - eeacms/centos `:latest`, `:7`
+  - `:latest` [*Dockerfile*](https://github.com/eea/eea.docker.linux/blob/master/centos/Dockerfile) (default)
+  - `:7s` [*Dockerfile*](https://github.com/eea/eea.docker.linux/blob/slim/centos/Dockerfile)
+  - `:7` [*Dockerfile*](https://github.com/eea/eea.docker.linux/blob/fat/centos/Dockerfile)
 
 
 ### Base docker image

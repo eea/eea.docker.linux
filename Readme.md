@@ -9,9 +9,9 @@ can obviously re-use them within your non-related EEA projects.
 
 ### Supported tags and respective Dockerfile links
 
-  - eeacms/ubuntu `:latest`, `:14.04`
-  - eeacms/debian `:latest`, `:jessie`
-  - eeacms/centos `:latest`, `:7`
+  - eeacms/ubuntu `:latest`, `14s`, `:14.04`
+  - eeacms/debian `:latest`, `:8s`, `:jessie`
+  - eeacms/centos `:latest`, `:7s`, `:7`
 
 
 ### Base docker images
