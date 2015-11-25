@@ -4,6 +4,18 @@ MAINTAINER "Alin Voinea" <alin.voinea@eaudeweb.ro>
 #
 # Install
 #
+RUN sed -i 's|main|main contrib|' /etc/apt/sources.list
+
+ADD install-dependencies.sh /bin/install-dependencies
+ADD *.apt /etc/apt/
+RUN install-dependencies /etc/apt/
+
+ONBUILD ADD *.apt /opt/
+ONBUILD RUN install-dependencies /opt/
+
+#
+# wkhtmltopdf 0.12.2.4
+#
 RUN \
   apt-get update && \
   apt-get -y --no-install-recommends install \
@@ -11,57 +23,14 @@ RUN \
   rm -rf /var/lib/apt/lists/*
 
 RUN \
-  sed -i 's|main|main contrib|' /etc/apt/sources.list && \
   curl -k -o /tmp/wkhtmltopdf-0.12.2.4.tgz http://eggrepo.apps.eea.europa.eu/pypi/wkhtmltopdf/wkhtmltopdf-0.12.2.4.tgz && \
-  apt-get update && \
-  apt-get -y --no-install-recommends install \
-  build-essential \
-  cron \
-  curl \
-  make \
-  tar \
-  fontconfig \
-  ghostscript \
-  git \
-  gsfonts \
-  graphviz \
-  graphviz-dev \
-  htop \
-  ImageMagick \
-  libaprutil1-dev \
-  libc6-dev \
-  libcurl4-openssl-dev \
-  libjpeg-dev \
-  libjpeg62 \
-  libpng12-0 \
-  libmagickcore-6.q16-2-extra \
-  libmemcached-dev \
-  libpq-dev \
-  libreadline-dev \
-  libsasl2-dev \
-  libssl-dev \
-  libsvn-dev \
-  libxml2-dev \
-  libxslt-dev \
-  libz-dev \
-  pdftk \
-  poppler-utils \
-  python-dev \
-  python-docutils \
-  python-testtools \
-  ssh-client \
-  subversion \
-  tex-gyre \
-  unzip \
-  wget \
-  wv \
-  xpdf \
-  zlib1g-dev \
-  ttf-mscorefonts-installer && \
   tar -zxvf /tmp/wkhtmltopdf-0.12.2.4.tgz -C /usr/bin/ && \
-  rm -f /tmp/wkhtmltopdf-0.12.2.4.tgz && \
-  rm -rf /var/lib/apt/lists/* && \
-  ln -s /lib/x86_64-linux-gnu/libz.so.1 /lib/libz.so # Fix zlib path
+  rm -f /tmp/wkhtmltopdf-0.12.2.4.tgz
+
+#
+# Fix zlib path
+#
+RUN ln -s /lib/x86_64-linux-gnu/libz.so.1 /lib/libz.so
 
 #
 # Python 2.4

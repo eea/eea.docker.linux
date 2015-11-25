@@ -8,7 +8,7 @@ can obviously re-use it within your non-related EEA projects.
 
 ### Supported tags and respective Dockerfile links
 
-  - eeacms/debian `:latest`, `:jessie` 
+  - eeacms/debian `:latest`, `:jessie`
 
 
 ### Base docker image
@@ -42,6 +42,27 @@ can obviously re-use it within your non-related EEA projects.
 
 ### Extend
 
-This image was created to be extended, thus within your Dockerfile:
+This image was created to be extended, thus, in order to create an Apache image
+create a *requires.apt* file where you define system dependencies:
 
-    FROM eeacms/debian
+`$ tree /my-app`
+
+```
+  /my-app/
+  |_ requires.apt
+  |_ Dockerfile
+  |_ Readme.md
+```
+
+`$ cat requires.apt`
+```
+  apache2
+  libapache2-mod-wsgi
+  libapache2-mod-python
+```
+
+`$ cat Dockerfile`
+```
+  FROM eeacms/debian
+  CMD ['apachectl -D FOREGROUND']
+```

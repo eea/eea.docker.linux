@@ -37,11 +37,33 @@ can obviously re-use it within your non-related EEA projects.
 
 ### Usage
 
-    docker run -it --rm eeacms/centos cat /etc/*release
+    $ docker run -it --rm eeacms/centos cat /etc/*release
 
 
 ### Extend
 
-This image was created to be extended, thus within your Dockerfile:
+This image was created to be extended, thus, in order to create an Apache image
+create a *requires.yum* file where you define system dependencies:
 
-    FROM eeacms/centos
+`$ tree /my-app`
+
+```
+  /my-app/
+  |_ requires.yum
+  |_ Dockerfile
+  |_ Readme.md
+```
+
+`$ cat requires.yum`
+```
+  httpd
+  mod_ldap
+  mod_session
+  mod_ssl
+```
+
+`$ cat Dockerfile`
+```
+  FROM eeacms/centos
+  CMD ['apachectl -D FOREGROUND']
+```
