@@ -5,7 +5,7 @@ ADD install-dependencies.sh /bin/install-dependencies
 ADD *.yum /etc/yum/
 RUN install-dependencies /etc/yum/
 
-ONBUILD ADD *.yum /opt/
-ONBUILD RUN install-dependencies /opt/
+ONBUILD COPY . /opt/app
+ONBUILD RUN install-dependencies /opt/app
 
 CMD ["bash"]

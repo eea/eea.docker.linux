@@ -10,8 +10,8 @@ ADD install-dependencies.sh /bin/install-dependencies
 ADD *.apt /etc/apt/
 RUN install-dependencies /etc/apt/
 
-ONBUILD ADD *.apt /opt/
-ONBUILD RUN install-dependencies /opt/
+ONBUILD ADD . /opt/app
+ONBUILD RUN install-dependencies /opt/app
 
 #
 # Fix zlib path
