@@ -5,8 +5,8 @@ ADD install-dependencies.sh /bin/install-dependencies
 ADD *.yum /etc/yum/
 RUN install-dependencies /etc/yum/
 
-ONBUILD ADD *.yum /opt/
-ONBUILD RUN install-dependencies /opt/
+ONBUILD ADD . /opt/app
+ONBUILD RUN install-dependencies /opt/app
 
 #
 # Python 2.4
