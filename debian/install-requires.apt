@@ -3,6 +3,7 @@ curl
 make
 tar
 git
+libexpat-devel
 libc6-dev
 libjpeg-dev
 libjpeg62

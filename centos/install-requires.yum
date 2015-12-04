@@ -4,6 +4,7 @@ curl
 gcc
 gcc-c++
 git
+expat-devel
 glibc-devel
 libjpeg-turbo-devel
 libjpeg-turbo
