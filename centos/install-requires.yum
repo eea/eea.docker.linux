@@ -5,6 +5,7 @@ curl
 fontconfig
 gcc
 gcc-c++
+expat-devel
 ghostscript
 git
 graphviz-devel
