@@ -5,7 +5,9 @@ if [ -z "$DEPATH" ]; then
   DEPATH="/"
 fi
 
-DEPENDENCIES=`find $DEPATH -name "*require*.apt" -exec cat {} \;`
+DEPATHS=`find $DEPATH -name "*require*.apt"`
+DEPENDENCIES=`for i in $DEPATHS; do cat $i; echo; done`
+
 if [ ! -z "$DEPENDENCIES" ]; then
   echo "Running apt-get -y --no-install-recommends install $DEPENDENCIES"
   apt-get update

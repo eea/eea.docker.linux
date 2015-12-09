@@ -5,7 +5,9 @@ if [ -z "$DEPATH" ]; then
   DEPATH="/"
 fi
 
-DEPENDENCIES=`find $DEPATH -name "*require*.yum" -exec cat {} \;`
+DEPATHS=`find $DEPATH -name "*require*.yum"`
+DEPENDENCIES=`for i in $DEPATHS; do cat $i; echo; done`
+
 if [ ! -z "$DEPENDENCIES" ]; then
   echo "Running yum -y install $DEPENDENCIES"
   yum -y updateinfo
