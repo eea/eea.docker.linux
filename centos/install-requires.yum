@@ -18,6 +18,7 @@ libjpeg-turbo-devel
 libjpeg-turbo
 libpng12
 libmemcached-devel
+msttcorefonts
 readline-devel
 cyrus-sasl-devel
 openssl-devel
@@ -33,11 +34,11 @@ python-docutils
 python-test
 python-testtools
 subversion
+tex-gyre-pagella
 unzip
 urw-fonts
 wget
+wkhtmltopdf
 wv
 xpdf
 zlib-devel
-ftp://rpmfind.net/linux/sourceforge/r/re/repo-1c/RPMS/msttcorefonts-2.5-1.noarch.rpm
-http://download.gna.org/wkhtmltopdf/0.12/0.12.2.1/wkhtmltox-0.12.2.1_linux-centos7-amd64.rpm
