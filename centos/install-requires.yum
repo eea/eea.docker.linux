@@ -38,7 +38,7 @@ tex-gyre-pagella
 unzip
 urw-fonts
 wget
-wkhtmltopdf
+wkhtmltox
 wv
 xpdf
 zlib-devel
