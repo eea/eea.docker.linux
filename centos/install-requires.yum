@@ -18,6 +18,7 @@ libxslt-devel
 poppler-utils
 postgresql-devel
 python-devel
+python34-devel
 subversion
 urw-fonts
 zlib-devel
