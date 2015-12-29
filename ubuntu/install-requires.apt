@@ -28,6 +28,7 @@ libxslt-dev
 libz-dev
 pdftk
 poppler-utils
+python3-pip
 python-dev
 python-docutils
 python-testtools

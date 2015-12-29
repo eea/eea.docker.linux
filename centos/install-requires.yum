@@ -29,6 +29,7 @@ which
 pdftk
 poppler-utils
 postgresql-devel
+python34-devel
 python-devel
 python-docutils
 python-test
