@@ -16,6 +16,7 @@ openssl-devel
 libxml2-devel
 libxslt-devel
 poppler-utils
+openldap-devel
 postgresql-devel
 python-devel
 python34-devel
