@@ -23,7 +23,7 @@ RUN \
   rm -rf /var/lib/apt/lists/*
 
 RUN \
-  curl -k -o /tmp/wkhtmltopdf-0.12.2.4.tgz http://eggrepo.apps.eea.europa.eu/pypi/wkhtmltopdf/wkhtmltopdf-0.12.2.4.tgz && \
+  curl -k -o /tmp/wkhtmltopdf-0.12.2.4.tgz https://svn.eionet.europa.eu/repositories/Zope/trunk/wk/wkhtmltopdf-0.12.2.4.tgz && \
   tar -zxvf /tmp/wkhtmltopdf-0.12.2.4.tgz -C /usr/bin/ && \
   rm -f /tmp/wkhtmltopdf-0.12.2.4.tgz
 
