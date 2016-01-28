@@ -18,6 +18,7 @@ libxslt-dev
 libz-dev
 poppler-utils
 python-dev
+python3-dev
 python3-pip
 subversion
 tex-gyre
